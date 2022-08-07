@@ -2,34 +2,24 @@
 html {
     font-size: 62.5%;
 }
+
 :root {
     --purple: #401b9c;
     --dark-grey: #1c1d1f;
-    --light-grey:#ececec;
-    --grey:#6a6f73;
+    --light-grey: #ececec;
+    --grey: #6a6f73;
 }
 
-.main-nav, .card-content {
-    background-color: white;
-    box-shadow:0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
-
-}
-
-.utiltiy-comment {
-    color: var(--grey);
-}
 
 @font-face {
-font-family: SuisseWorks;
-src: url(fonts/SuisseWorks-Bold-v1.woff2);
+    font-family: SuisseWorks;
+    src: url(fonts/SuisseWorks-Bold-v1.woff2);
 }
+
 @font-face {
     font-family: Udemy;
     src: url(fonts/Udemy-Sans-Regular-v1.woff2);
 }
-
-
-
 
 * {
     margin: 0;
@@ -38,13 +28,15 @@ src: url(fonts/SuisseWorks-Bold-v1.woff2);
     font-family: Udemy;
     color: var(--dark-grey);
 }
-h1, 
+
+h1,
 h2 {
     font-family: SuisseWorks;
     font-size: 3.2rem;
 }
+
 h3 {
-    
+
     font-size: 2.4rem;
     font-weight: 700;
 }
@@ -63,30 +55,45 @@ p {
 a {
     text-decoration: none;
 }
-a:hover, 
+
+a:hover,
 button[type="submit"]:hover {
     color: var(--purple);
 }
+
 ul {
     display: flex;
     align-items: center;
 }
+
 li {
     list-style: none;
     display: inline-flex;
     align-items: center;
 }
-button, input {
+
+button,
+input {
     background-color: transparent;
     border: 0px;
 }
-button, 
-.btn, 
+
+button,
+.btn,
 a {
     cursor: pointer;
 }
 
-.badge{
+/*********************************************************/
+/*************************classes*************************/
+/*********************************************************/
+
+/* special texts(spans) */
+.utiltiy-comment {
+    color: var(--grey);
+}
+
+.badge {
     background-color: #eceb98;
     color: #3d3c0a;
     font-size: 1.2rem;
@@ -110,34 +117,96 @@ a {
 .btn.sm {
     padding: 0rem 0.5rem;
 }
-.btn.black{
+
+.btn.black {
     background-color: var(--dark-grey);
     color: white;
 }
 
-
+/* icons */
 .material-symbols-outlined {
     font-weight: bold;
     line-height: inherit;
     font-size: 24px;
 }
-/* buttons */
 
-/* main styles */
+/* hover cards */
+.hover-card {
+    position: relative;
+}
 
-.main-nav{
+.hover-card .card {
+    width: 20rem;
+    position: absolute;
+    top: 6.7rem;
+    right: 0;
+    display: none;
+}
+
+.hover-card .card .card-content {
+    text-align: center;
+    padding: 1rem 1rem;
+    margin-top: 0.7rem;
+
+
+}
+
+.hover-card .card p {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding-bottom: 1rem;
+}
+
+.hover-card .card:hover,
+.hover-card:hover .card {
+    display: block;
+}
+
+.shadow,
+.card-content {
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+}
+
+/* responsive classes */
+.container {
+    max-width: 134rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+    gap: 10%;
+    padding: 10px 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 2.9rem 1.6rem;
+    width: 100%;
+    justify-items: center;
+}
+
+/************************************************************/
+/*************************Navigation*************************/
+/************************************************************/
+
+.main-nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0 2.4rem;
 }
-.main-nav > * {
+
+.main-nav>* {
     font-size: 1.4rem;
     flex-grow: 1;
     height: 6.7rem;
     display: inline-flex;
     align-items: center;
 }
+
 .main-nav form {
     flex-grow: 100;
 }
@@ -145,6 +214,7 @@ a {
 .main-nav form {
     display: flex;
 }
+
 .main-nav form .search-bar {
     border-width: 2px;
     border-style: solid;
@@ -155,6 +225,7 @@ a {
     margin: 7px;
     background-color: var(--light-grey);
 }
+
 .main-nav form .search-bar input {
     width: 100%;
     height: 100%;
@@ -166,35 +237,10 @@ a {
 .main-nav ul {
     padding-left: 20px;
 }
-.main-nav ul li{
+
+.main-nav ul li {
     height: 100%;
     padding: 0 15px;
-}
-.hover-card {
-    position: relative;
-}
-.hover-card .card {
-    width: 20rem;
-    position: absolute;
-    top: 6.7rem;
-    right: 0;
-    display: none;
-}
-.hover-card .card .card-content {
-    text-align: center;
-    padding: 1rem 1rem;
-    margin-top: 0.7rem;
-
-
-}
-.hover-card .card p{
-    font-size: 1.5rem;
-    font-weight: bolder;
-    padding-bottom: 1rem;
-}
-.hover-card .card:hover,
-.hover-card:hover .card {
-    display: block;
 }
 
 .hamburger,
@@ -203,144 +249,112 @@ a {
 }
 
 @media only screen and (max-width: 1200px) {
+
     /* For medium screen: */
     .main-nav ul {
         display: none;
     }
 }
+
 @media only screen and (max-width: 768px) {
+
     /* For mobile phones: */
-    .main-nav{
+    .main-nav {
         justify-content: space-between;
         flex-direction: row-reverse;
     }
-    .main-nav>*{
+
+    .main-nav>* {
         flex-grow: 0;
     }
-    .main-nav form, .main-nav nav{
+
+    .main-nav form,
+    .main-nav nav {
         display: none;
     }
+
     .hamburger {
         display: inherit;
     }
-  }
-.container{
-    max-width: 134rem;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    padding-bottom: 2rem;
-    gap: 10%;
-    padding: 10px 20px;
-}   
-/********************************************************/  
-/*************************Header*************************/  
-/********************************************************/  
-header .container{
+}
+
+/********************************************************/
+/*************************Header*************************/
+/********************************************************/
+header .container {
     background-color: var(--light-grey);
     padding-top: 5rem;
     flex-wrap: wrap-reverse;
 
 }
-header .container img{
+
+header .container img {
     align-content: center;
     width: 20vw;
     min-width: 300px;
 }
-header .container .card-content{
+
+header .container .card-content {
     padding: 40px 15px;
     width: 100vw;
     max-width: 44rem;
 }
-header .container .card p{
+
+header .container .card p {
     padding: 10px 0px;
     font-size: 1.6rem;
 }
-/*****************************************************************/  
-/*************************Courses Section*************************/  
-/*****************************************************************/  
 
-.courses-section
-{
+/*****************************************************************/
+/*************************Courses Section*************************/
+/*****************************************************************/
+
+.courses-section {
     flex-direction: column;
     align-items: flex-start;
     padding-top: 3rem;
 }
-.courses-section >p {
+
+.courses-section>p {
     font-size: 1.9rem;
     margin: 9px 0;
 }
 
-.courses-section > nav > ul {
+/* courses nav bar */
+.courses-section>nav>ul {
     font-size: 1.6rem;
-    gap: 1rem 4.6rem;
     font-weight: bold;
     margin: 3rem 0px;
-    flex-wrap: wrap;
-    max-height: 2rem;
     overflow: hidden;
+    flex-wrap: wrap;
+    gap: 1rem 4.6rem;
+    max-height: 2rem;
 }
-.courses-section  li a {
+
+.courses-section li a {
     color: var(--grey);
 }
-.courses-section  li a:hover {
+
+.courses-section li a:hover {
     color: black;
 }
 
-
+/* bordered container */
 .courses-section .container {
-    border:1px solid #d1d7dc;
+    border: 1px solid #d1d7dc;
     padding: 3.2rem 3rem 0 3rem;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
 }
 
-
-.courses-section .container > p {
+.courses-section .container>p {
     margin: 2rem 0;
     max-width: 80rem;
 }
 
 
 /* courses */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
-    gap: 2.9rem 1.6rem;
-    width: 100%;
-    justify-items: center;
-}
-/* @media only screen and (max-width: 1388px) {
-    .grid-container {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem 5.6rem ;
-
-    }
-}
-@media only screen and (max-width: 1240px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem 1rem;
-
-    }
-}
-@media only screen and (max-width: 845px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem 5rem;
-
-    }
-}
-@media only screen and (max-width: 650px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-        gap: 3rem 0rem;
-        align-content: center;
-
-    }
-} */
 .courses-section .grid-container {
     padding: 5rem 0 1rem 0;
 }
@@ -353,7 +367,9 @@ header .container .card p{
     max-width: 240px;
 }
 
-.rating, .course-name, .price{
+.rating,
+.course-name,
+.price {
     font-weight: bolder;
     font-size: 1.6rem;
 }
@@ -364,11 +380,11 @@ header .container .card p{
     gap: 0.4rem;
 }
 
-.rating-description .rating{
+.rating-description .rating {
     color: #b4690e;
 }
-.stars span{
+
+.stars span {
     color: #e59819;
     font-size: 1.4rem;
 }
-
