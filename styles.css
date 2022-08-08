@@ -78,9 +78,10 @@ li {
 
 section,
 section.container,
-footer   {
+footer {
     margin-top: 6rem;
 }
+
 button,
 input {
     background-color: transparent;
@@ -221,7 +222,7 @@ a {
     max-width: 134rem;
     margin: auto;
     display: flex;
-    justify-content: space-around;  
+    justify-content: space-around;
     gap: 1.6rem;
     padding: 10px 20px 2rem 20px;
     flex-direction: column;
@@ -236,12 +237,14 @@ a {
     justify-items: center;
 }
 
-.grid-container > * {
+.grid-container>* {
     width: 85%;
 }
-.grid-container > * img {
+
+.grid-container>* img {
     width: 100%;
 }
+
 /************************************************************/
 /*************************Navigation*************************/
 /************************************************************/
@@ -261,13 +264,15 @@ a {
     flex-grow: 1;
     align-items: center;
     display: inline-flex;
-    
+
 }
-.main-nav .menu-content > * {
+
+.main-nav .menu-content>* {
     height: 6.7rem;
     align-items: center;
     display: inline-flex;
 }
+
 .main-nav form {
     flex-grow: 100;
 }
@@ -313,8 +318,10 @@ a {
 .hamburger-checkbox {
     display: none;
 }
+
 /* TODO : make  responsive navigation bar*/
 @media only screen and (max-width: 1200px) {
+
     /* For medium screen: */
     .main-nav .menu-content ul {
         display: none;
@@ -340,9 +347,9 @@ a {
     .hamburger {
         display: inherit;
     }
-} 
+}
 
-.hamburger-checkbox:checked ~ .menu-content {
+.hamburger-checkbox:checked~.menu-content {
     width: 100%;
     position: absolute;
     top: 7rem;
@@ -356,14 +363,7 @@ a {
 }
 
 
-.hamburger-checkbox:checked ~ .menu-content > * {
-    height: auto;
-    margin: auto;
-    display: initial;
-    text-align: center;
-    width: 100%;
-}
-.hamburger-checkbox:checked ~ .menu-content > * {
+.hamburger-checkbox:checked~.menu-content>* {
     height: auto;
     margin: auto;
     display: initial;
@@ -371,11 +371,20 @@ a {
     width: 100%;
 }
 
-.hamburger-checkbox:checked ~ .menu-content form button,
-.hamburger-checkbox:checked ~ .menu-content .hover-card .card {
+.hamburger-checkbox:checked~.menu-content>* {
+    height: auto;
+    margin: auto;
+    display: initial;
+    text-align: center;
+    width: 100%;
+}
+
+.hamburger-checkbox:checked~.menu-content form button,
+.hamburger-checkbox:checked~.menu-content .hover-card .card {
     display: none;
 }
-.hamburger-checkbox:checked ~ .menu-content ul  {
+
+.hamburger-checkbox:checked~.menu-content ul {
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -496,6 +505,7 @@ header .container .card p {
     color: #e59819;
     font-size: 1.4rem;
 }
+
 /**********************************************************/
 /*************************Feauters*************************/
 /**********************************************************/
@@ -514,6 +524,7 @@ header .container .card p {
 .feauters ul li {
     max-width: 33rem;
 }
+
 .circle span {
     background-color: #d1d7dc;
     border-radius: 50%;
@@ -524,7 +535,7 @@ header .container .card p {
     align-items: center;
 }
 
-.circle ~ strong {
+.circle~strong {
     font-size: 1.6rem;
     margin-left: 1rem;
 }
@@ -541,14 +552,14 @@ header .container .card p {
     gap: 1.6rem;
 }
 
-.categories ul li{
+.categories ul li {
     flex-direction: column;
     align-items: flex-start;
 }
 
 .categories ul li img {
     width: 20vw;
-    min-width:150px;
+    min-width: 150px;
 }
 
 .img-wrapper {
@@ -557,11 +568,11 @@ header .container .card p {
 }
 
 .img-wrapper img {
-    transition: transform 100ms cubic-bezier(.2,0,1,.9);
+    transition: transform 100ms cubic-bezier(.2, 0, 1, .9);
 
 }
 
-.img-wrapper img:hover{
+.img-wrapper img:hover {
     transform: scale(1.1);
 }
 
@@ -579,11 +590,12 @@ header .container .card p {
     justify-items: start;
 }
 
-.main-list  li{
+.main-list li {
     flex-direction: column;
     align-items: flex-start;
 }
-.main-list  .sub-lists ul {
+
+.main-list .sub-lists ul {
     flex-direction: column;
     align-items: flex-start;
 }
@@ -595,12 +607,12 @@ header .container .card p {
     padding: 2.3rem 0 1rem 0;
 }
 
-.feauters-topics ul li  a:not(:hover) {
+.feauters-topics ul li a:not(:hover) {
     color: var(--light-purple);
-    
+
 }
 
-.feauters-topics ul li a ~ span {
+.feauters-topics ul li a~span {
     font-size: 1.4rem;
 }
 
@@ -615,6 +627,7 @@ header .container .card p {
     text-align: center;
     gap: 1rem 9rem;
 }
+
 .instructor img {
     width: 25vw;
     min-width: 250px;
@@ -640,6 +653,7 @@ header .container .card p {
         flex-direction: row;
         text-align: left;
     }
+
     .business {
         flex-direction: row-reverse;
     }
@@ -651,6 +665,7 @@ header .container .card p {
 .companies {
     background-color: var(--light-blue);
 }
+
 .companies .container {
     align-items: center;
     text-align: center;
@@ -680,7 +695,7 @@ footer .links-language ul {
     flex-direction: column;
     align-items: flex-start;
     flex-grow: 1;
-}   
+}
 
 .language-container {
     flex-grow: 5;
@@ -693,6 +708,7 @@ footer .links-language ul {
     border-color: white;
     padding: 0 3rem 0 1rem;
 }
+
 .language-container .btn span {
     color: white;
     font-weight: 100;
@@ -706,12 +722,13 @@ footer .links-language ul li a {
     padding: 0.4rem 0;
     color: white;
 }
+
 footer .links-language ul li a:hover {
     color: white;
     text-decoration: underline;
 }
 
-.copyright span{
+.copyright span {
     color: white;
     font-size: 1.2rem;
 }
