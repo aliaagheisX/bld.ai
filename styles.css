@@ -5,9 +5,11 @@ html {
 
 :root {
     --purple: #401b9c;
+    --light-purple: #5624d0;
     --dark-grey: #1c1d1f;
     --light-grey: #ececec;
     --grey: #6a6f73;
+    --light-blue: #f7f9fa;
 }
 
 
@@ -64,6 +66,8 @@ button[type="submit"]:hover {
 ul {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 li {
@@ -72,6 +76,11 @@ li {
     align-items: center;
 }
 
+section,
+section.container,
+footer   {
+    margin-top: 6rem;
+}
 button,
 input {
     background-color: transparent;
@@ -212,11 +221,11 @@ a {
     max-width: 134rem;
     margin: auto;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    padding-bottom: 2rem;
-    gap: 10%;
-    padding: 10px 20px;
+    justify-content: space-around;  
+    gap: 1.6rem;
+    padding: 10px 20px 2rem 20px;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .grid-container {
@@ -227,6 +236,12 @@ a {
     justify-items: center;
 }
 
+.grid-container > * {
+    width: 85%;
+}
+.grid-container > * img {
+    width: 100%;
+}
 /************************************************************/
 /*************************Navigation*************************/
 /************************************************************/
@@ -236,16 +251,23 @@ a {
     align-items: center;
     justify-content: space-around;
     padding: 0 2.4rem;
+    gap: 1rem;
+    height: 6.7rem;
+
 }
 
-.main-nav>* {
+.main-nav .menu-content {
     font-size: 1.4rem;
     flex-grow: 1;
-    height: 6.7rem;
-    display: inline-flex;
     align-items: center;
+    display: inline-flex;
+    
 }
-
+.main-nav .menu-content > * {
+    height: 6.7rem;
+    align-items: center;
+    display: inline-flex;
+}
 .main-nav form {
     flex-grow: 100;
 }
@@ -291,11 +313,10 @@ a {
 .hamburger-checkbox {
     display: none;
 }
-
+/* TODO : make  responsive navigation bar*/
 @media only screen and (max-width: 1200px) {
-
     /* For medium screen: */
-    .main-nav ul {
+    .main-nav .menu-content ul {
         display: none;
     }
 }
@@ -312,8 +333,7 @@ a {
         flex-grow: 0;
     }
 
-    .main-nav form,
-    .main-nav nav {
+    .main-nav .menu-content {
         display: none;
     }
 
@@ -322,6 +342,50 @@ a {
     }
 } 
 
+.hamburger-checkbox:checked ~ .menu-content {
+    width: 100%;
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 2rem 0;
+    gap: 1.6rem;
+}
+
+
+.hamburger-checkbox:checked ~ .menu-content > * {
+    height: auto;
+    margin: auto;
+    display: initial;
+    text-align: center;
+    width: 100%;
+}
+.hamburger-checkbox:checked ~ .menu-content > * {
+    height: auto;
+    margin: auto;
+    display: initial;
+    text-align: center;
+    width: 100%;
+}
+
+.hamburger-checkbox:checked ~ .menu-content form button,
+.hamburger-checkbox:checked ~ .menu-content .hover-card .card {
+    display: none;
+}
+.hamburger-checkbox:checked ~ .menu-content ul  {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+/* .hamburger-checkbox:checked ~ .menu-content ul {
+    display: flex;
+    padding: 0;
+    flex-wrap: nowrap;
+} */
 /********************************************************/
 /*************************Header*************************/
 /********************************************************/
@@ -329,6 +393,8 @@ header .container {
     background-color: var(--light-grey);
     padding-top: 5rem;
     flex-wrap: wrap-reverse;
+    flex-direction: row;
+    align-items: flex-end;
 
 }
 
@@ -387,8 +453,6 @@ header .container .card p {
 .courses-section .container {
     border: 1px solid #d1d7dc;
     padding: 3.2rem 3rem 0 3rem;
-    flex-direction: column;
-    align-items: flex-start;
     width: 100%;
 }
 
@@ -431,4 +495,223 @@ header .container .card p {
 .stars span {
     color: #e59819;
     font-size: 1.4rem;
+}
+/**********************************************************/
+/*************************Feauters*************************/
+/**********************************************************/
+.feauters {
+    background-color: var(--light-blue);
+    padding: 1rem 0;
+}
+
+.feauters ul {
+    width: 100%;
+    justify-content: space-around;
+    gap: 3rem 1.5rem;
+    flex-wrap: wrap;
+}
+
+.feauters ul li {
+    max-width: 33rem;
+}
+.circle span {
+    background-color: #d1d7dc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle ~ strong {
+    font-size: 1.6rem;
+    margin-left: 1rem;
+}
+
+
+/************************************************************/
+/*************************categories*************************/
+/************************************************************/
+
+
+.categories ul {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.6rem;
+}
+
+.categories ul li{
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.categories ul li img {
+    width: 20vw;
+    min-width:150px;
+}
+
+.img-wrapper {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    transition: transform 100ms cubic-bezier(.2,0,1,.9);
+
+}
+
+.img-wrapper img:hover{
+    transform: scale(1.1);
+}
+
+/*****************************************************************/
+/*************************feauters-topics*************************/
+/*****************************************************************/
+
+.feauters-topics {
+    background: var(--light-blue);
+}
+
+
+.main-list {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-items: start;
+}
+
+.main-list  li{
+    flex-direction: column;
+    align-items: flex-start;
+}
+.main-list  .sub-lists ul {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.feauters-topics ul li a {
+    text-decoration: underline;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 2.3rem 0 1rem 0;
+}
+
+.feauters-topics ul li  a:not(:hover) {
+    color: var(--light-purple);
+    
+}
+
+.feauters-topics ul li a ~ span {
+    font-size: 1.4rem;
+}
+
+/************************************************************/
+/*************************Instructor*************************/
+/************************************************************/
+.instructor {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem 9rem;
+}
+.instructor img {
+    width: 25vw;
+    min-width: 250px;
+    max-width: 282px;
+}
+
+.instructor .details {
+    max-width: 45rem;
+}
+
+.instructor .details p {
+    font-size: 1.9rem;
+    margin-bottom: 1.6rem;
+}
+
+/* business */
+
+
+@media only screen and (min-width: 1000px) {
+
+    /* For medium screen: */
+    .instructor {
+        flex-direction: row;
+        text-align: left;
+    }
+    .business {
+        flex-direction: row-reverse;
+    }
+}
+
+/***********************************************************/
+/*************************companies*************************/
+/***********************************************************/
+.companies {
+    background-color: var(--light-blue);
+}
+.companies .container {
+    align-items: center;
+    text-align: center;
+}
+
+/********************************************************/
+/*************************Footer*************************/
+/********************************************************/
+
+/* layout */
+footer {
+    background: var(--dark-grey);
+    padding: 4rem 0 1rem 0;
+}
+
+footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer .links-language {
+    padding-bottom: 7rem;
+    flex-wrap: wrap;
+}
+
+footer .links-language ul {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+}   
+
+.language-container {
+    flex-grow: 5;
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+
+/* language button */
+.language-container .btn {
+    border-color: white;
+    padding: 0 3rem 0 1rem;
+}
+.language-container .btn span {
+    color: white;
+    font-weight: 100;
+    font-size: 1.6rem;
+    margin-right: 1rem;
+}
+
+/* links */
+footer .links-language ul li a {
+    font-size: 1.4rem;
+    padding: 0.4rem 0;
+    color: white;
+}
+footer .links-language ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.copyright span{
+    color: white;
+    font-size: 1.2rem;
 }

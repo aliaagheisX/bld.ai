@@ -17,11 +17,10 @@
         <!-- logo -->
         <a href="/"><img alt="udemy-logo" src="imgs/logo.svg" class="logo" width="100px" /></a>
         <!-- humberger menu -->
-        <div class="hamburger">
             <input type="checkbox" id="checkbox_toggle" class="hamburger-checkbox" />
-            <label for="checkbox_toggle" class="material-symbols-outlined">menu</label>
-        </div>
+            <label for="checkbox_toggle" class="material-symbols-outlined hamburger">menu</label>
         <!-- navbar -->
+        <div class="menu-content">
         <nav class="hover-card hover-nav">
             <a href="/">Categories</a>
             <div class="card">
@@ -96,11 +95,12 @@
             </li>
         </ul>
         <!-- buttons -->
-        <ul>
+        <ul class="btn-lists">
             <li><a class="btn" href="/">Log in</a></li>
             <li><a class="btn black" href="/">Sign up</a></li>
             <li><a class="btn sm material-symbols-outlined" href="/">language</a></li>
         </ul>
+    </div>
     </nav>
 
     <header>
@@ -230,6 +230,315 @@
             </div>
         </div>
     </section>
+
+    <section class="feauters">
+        <div class="container">
+            <ul>
+                <li>
+                    <div class="circle"><span class="material-symbols-outlined">play_arrow</span></div>
+                    <strong>Learn in-demand skills with over 185,000 video courses</strong>
+                </li>
+
+                <li>
+                    <div class="circle"><span class="material-symbols-outlined">star</span></div>
+                    <strong>Choose courses taught by real-world experts</strong>
+                </li>
+
+                <li>
+                    <div class="circle"><span class="material-symbols-outlined">all_inclusive</span></div>
+                    
+                    <strong>Learn at your own pace, with lifetime access on mobile and desktop</strong>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="courses-section container">
+            <h3>Students are viewing</h3>
+            <div class="grid-container">
+                <div class="course">
+                    <img src="imgs/courses/6.jpg" alt="course-image">
+                    <h4 class="course-name"><a href="/">The Complete 2022 Web Development Bootcamp</a></h4>
+                    <span class="utiltiy-comment instructor">Dr. Angela Yu</span>
+                    <div class="rating-description">
+                        <span class="rating">4.7</span>
+                        <div class="stars">
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star_half</span>
+                        </div>
+                        
+                        <span class="utiltiy-comment">(211,578)</span>
+                    </div>
+                    <span class="price">E£729.99</span>
+                    <span class="badge">Bestseller</span>
+                </div>
+
+                <div class="course">
+                    <img src="imgs/courses/7.jpg" alt="course-image">
+                    <h4 class="course-name"><a href="/">100 Days of Code: The Complete Python Pro Bootcamp for 2022</a> </h4>
+                    <span class="utiltiy-comment instructor">Dr. Angela Yu</span>
+                    <div class="rating-description">
+                        <span class="rating">4.7</span>
+                        <div class="stars">
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star_half</span>
+                        </div>
+                        <span class="utiltiy-comment">(126,656)</span>
+                    </div>
+                    <span class="price">E£729.99</span>
+                    <span class="badge">Bestseller</span>
+                </div>
+
+                <div class="course">
+                    <img src="imgs/courses/8.jpg" alt="course-image">
+                    <h4 class="course-name"><a href="/">The Complete JavaScript Course 2022: From Zero to Expert!</a></h4>
+                    <span class="utiltiy-comment instructor">Jonas Schmedtmann</span>
+                    <div class="rating-description">
+                        <span class="rating">4.8</span>
+                        <div class="stars">
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                        </div>
+                        <span class="utiltiy-comment">(146,621)</span>
+                    </div>
+                    <span class="price">E£1,699.99</span>
+                    <span class="badge">Bestseller</span>
+                </div>
+
+                <div class="course">
+                    <img src="imgs/courses/9.jpg" alt="course-image">
+                    <h4 class="course-name"><a href="/">React - The Complete Guide (incl Hooks, React Router, Redux)</a></h4>
+                    <span class="utiltiy-comment instructor">Academind by Maximilian Schwarzmüller</span>
+                    <div class="rating-description">
+                        <span class="rating">4.6</span>
+                        <div class="stars">
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star_half</span>
+                        </div>
+                        <span class="utiltiy-comment">(157,015)</span>
+                    </div>
+                    <span class="price">E£1,599.99</span>
+                    <span class="badge">Bestseller</span>
+                </div>
+
+                <div class="course">
+                    <img src="imgs/courses/5.jpg" alt="course-image">
+                    <h4 class="course-name"><a href="/">Ultimate AWS Certified Solutions Architect Associate</a></h4>
+                    <span class="utiltiy-comment instructor">Stephane Maarek | AWS Certified Cloud Practitioner</span>
+                    <div class="rating-description">
+                        <span class="rating">4.7</span>
+                        <div class="stars">
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star_half</span>
+                        </div>
+                        <span class="utiltiy-comment">(138,488)</span>
+                    </div>
+                    <span class="price">E£1,699.99</span>
+                    <span class="badge">Bestseller</span>
+                </div>
+
+            </div>
+    </section>
+
+    <section class="categories container ">
+        <h3>Top categories</h3>
+        <ul>
+            <li>
+                <a href="/">
+                    <div class="img-wrapper"><img src="imgs/cat/1.jpg" alt="categories-images"></a></div>
+                    <h4>Desgin</h4>
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <div class="img-wrapper"><img src="imgs/cat/2.jpg" alt="categories-images"></a></div>
+                    <h4>Development</h4>
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <div class="img-wrapper"><img src="imgs/cat/3.jpg" alt="categories-images"></a></div>
+                    <h4>Marketing</h4>
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <div class="img-wrapper"><img src="imgs/cat/4.jpg" alt="categories-images"></a></div>
+                    <h4>It and Software</h4>
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <div class="img-wrapper"><img src="imgs/cat/5.jpg" alt="categories-images"></a></div>
+                    <h4>Personal Development</h4>
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <div class="img-wrapper"><img src="imgs/cat/6.jpg" alt="categories-images"></a></div>
+                    <h4>Business</h4>
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <div class="img-wrapper"><img src="imgs/cat/7.jpg" alt="categories-images"></a></div>
+                    <h4>Photography</h4>
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <div class="img-wrapper"><img src="imgs/cat/8.jpg" alt="categories-images"></a></div>
+                    <h4>Music</h4>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="feauters-topics">
+        <div class="container">
+            <h3>Featured topics by category</h3>
+            <ul class="main-list grid-container">
+                <li class="sub-lists">
+                    <h4>Development</h4>
+                    <ul>
+                        <li><a href="/">Python</a><span class="utiltiy-comment">36,034,020 students</span></li>
+                        <li><a href="/">Web Development</a><span class="utiltiy-comment">11,254,675 students</span></li>
+                        <li><a href="/">Machine Learning</a><span class="utiltiy-comment">6,993,353 students</span></li>
+                    </ul>
+                </li>
+
+                <li class="sub-lists">
+                    <h4>Business</h4>
+                    <ul>
+                        <li><a href="/">Financial Analysis</a><span class="utiltiy-comment">1,196,820 students</span></li>
+                        <li><a href="/">SQL</a><span class="utiltiy-comment">5,863,218 students</span></li>
+                        <li><a href="/">PMP</a><span class="utiltiy-comment">1,709,238 students</span></li>
+                    </ul>
+                </li>
+                
+                <li class="sub-lists">
+                    <h4>IT and Software</h4>
+                    <ul>
+                        <li><a href="/">AWS Certification</a><span class="utiltiy-comment">5,923,566 students</span></li>
+                        <li><a href="/">Ethical Hacking</a><span class="utiltiy-comment">10,791,025 students</span></li>
+                        <li><a href="/">Cyber Security</a><span class="utiltiy-comment">3,935,715 students</span></li>
+                    </ul>
+                </li>
+                <li class="sub-lists">
+                    <h4>Design</h4>
+                    <ul>
+                        <li><a href="/">Photoshop</a><span class="utiltiy-comment">10,822,087 students</span></li>
+                        <li><a href="/">Graphic Design</a><span class="utiltiy-comment">3,345,182 students</span></li>
+                        <li><a href="/">Drawing</a><span class="utiltiy-comment">2,450,013 students</span></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="/" class="btn">Explore more topics</a>
+        </div>
+    </section>
+
+    <section class="instructor container">
+        <img src="imgs/people/1.jpg" alt="instructor">
+        <div class="details">
+            <h2>Become an instructor</h2>
+            <p>Instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.</p>
+            <a href="/" class="btn black">Start teaching today</a>
+        </div>
+    </section>
+
+    <section class="companies">
+        <div class="container">
+            <h2>Trusted by companies of all sizes</h2>
+            <ul>
+                <li>
+                    <a href="/"><img src="imgs/company/nasdaq-dark.svg" alt="nasdaq"></a>
+                </li>
+
+                <li>
+                    <a href="/"><img src="imgs/company/volkswagen-dark.svg" alt="volkswagen"></a>
+                </li>
+
+                <li>
+                    <a href="/"><img src="imgs/company/box-dark.svg" alt="box"></a>
+                </li>
+
+                <li>
+                    <a href="/"><img src="imgs/company/netapp-dark.svg" alt="netapp"></a>
+                </li>
+
+                <li>
+                    <a href="/"><img src="imgs/company/eventbrite-dark.svg" alt="eventbrite"></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="instructor business container">
+        <img src="imgs/people/2.jpg" alt="instructor">
+        <div class="details">
+            <img alt="udemy business" src="imgs/logo-ub.svg" width="282">
+            <p>Get unlimited access to 16,000+ of Udemy’s top courses for your team. Learn and improve skills across business, tech, design, and more.</p>
+            <a href="/" class="btn black">Get Udemy Business</a>
+        </div>
+    </section>
+
+    <section class="instructor container">
+        <img src="imgs/people/3.jpg" alt="people help each other">
+        <div class="details">
+            <h2>Transform your life through education</h2>
+            <p>Learners around the world are launching new careers, advancing in their fields, and enriching their lives.</p>
+            <a href="/" class="btn black">Find out how</a>
+        </div>
+    </section>
+
+    <footer >
+
+        <div class="container links-language">
+           <ul>
+                <li><a href="/">Udemy Business</a></li>
+                <li><a href="/">Teach on Udemy</a></li>
+                <li><a href="/">Get the app</a></li>
+                <li><a href="/">About us</a></li>
+                <li><a href="/">Contact us</a></li>
+           </ul>
+           <ul>
+                <li><a href="/">Careers</a></li>
+                <li><a href="/">Blog</a></li>
+                <li><a href="/">Help and Support</a></li>
+                <li><a href="/">Affilate</a></li>
+                <li><a href="/">Investors</a></li>
+            </ul>
+           <ul>
+                <li><a href="/">Terms</a></li>
+                <li><a href="/">Privacy policy</a></li>
+                <li><a href="/">Cookie settings</a></li>
+                <li><a href="/">Sitemap</a></li>
+                <li><a href="/">Accessibility statement</a></li>
+           </ul>
+           <div class="language-container">
+                <a href="/" class="btn black"><span class="material-symbols-outlined">language</span> English</a>
+           </div>
+        </div>
+        <div class=" container copyright">
+            <img src="imgs/logo-udemy-inverted.svg" alt="logo-image"  class="logo" width="85">
+            <span>© 2022 Udemy, Inc.</span>
+        </div>
+    </footer>
 </body>
 
 </html>
