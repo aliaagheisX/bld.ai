@@ -243,6 +243,8 @@ a {
 
 .grid-container>* img {
     width: 100%;
+    min-width: 195px;
+    max-width: 240px;
 }
 
 /************************************************************/
@@ -352,7 +354,7 @@ a {
 .hamburger-checkbox:checked~.menu-content {
     width: 100%;
     position: absolute;
-    top: 7rem;
+    top: 6rem;
     left: 0;
     background: white;
     display: flex;
@@ -360,6 +362,8 @@ a {
     align-items: baseline;
     padding: 2rem 0;
     gap: 1.6rem;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+
 }
 
 
@@ -560,6 +564,7 @@ header .container .card p {
 .categories ul li img {
     width: 20vw;
     min-width: 150px;
+    max-width: 300px;
 }
 
 .img-wrapper {
