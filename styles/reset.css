@@ -1,0 +1,113 @@
+:root {
+    /* colors */
+    --purple: #401b9c;
+    --light-purple: #5624d0;
+    --dark-grey: #1c1d1f;
+    --light-grey: #ececec;
+    --grey: #6a6f73;
+    --light-blue: #f7f9fa;
+
+    /* font sizes */
+    --xlarge-font: 1.9rem;
+    --large-font:1.6rem;
+    --medium-font:1.4rem;
+    --small-font:1.2rem;
+
+    /* font-weight */
+    --light-weight:100;
+    --medium-weight:700;
+    --bold-weight:bolder;
+
+    /* fixed gaps */
+    --medium-gap : 1.6rem;
+    --vertical-pad: 3.2rem;
+
+    /* utilities */
+    --shadow:0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+}
+
+
+@font-face {
+    font-family: SuisseWorks;
+    src: url(../fonts/SuisseWorks-Bold-v1.woff2);
+}
+
+@font-face {
+    font-family: Udemy;
+    src: url(../fonts/Udemy-Sans-Regular-v1.woff2);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Udemy;
+    color: var(--dark-grey);
+}
+
+h1,
+h2 {
+    font-family: SuisseWorks;
+    font-size: 3.2rem;
+}
+
+h3 {
+
+    font-size: 2.4rem;
+    font-weight: var(--medium-weight);
+}
+
+h4 {
+    font-weight: var(--medium-weight);
+    line-height: 1.2;
+    letter-spacing: -.04rem;
+    font-size: var(--large-font);
+}
+
+p {
+    font-size: var(--large-font);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover,
+button[type="submit"]:hover {
+    color: var(--purple);
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+li {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+section,
+section.container,
+footer {
+    margin-top: 5rem;
+}
+
+button,
+input {
+    background-color: transparent;
+    border: 0px;
+}
+
+button,
+.btn,
+a {
+    cursor: pointer;
+}

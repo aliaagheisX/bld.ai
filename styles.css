@@ -1,99 +1,4 @@
-/* main styles */
-html {
-    font-size: 62.5%;
-}
-
-:root {
-    --purple: #401b9c;
-    --light-purple: #5624d0;
-    --dark-grey: #1c1d1f;
-    --light-grey: #ececec;
-    --grey: #6a6f73;
-    --light-blue: #f7f9fa;
-}
-
-
-@font-face {
-    font-family: SuisseWorks;
-    src: url(fonts/SuisseWorks-Bold-v1.woff2);
-}
-
-@font-face {
-    font-family: Udemy;
-    src: url(fonts/Udemy-Sans-Regular-v1.woff2);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Udemy;
-    color: var(--dark-grey);
-}
-
-h1,
-h2 {
-    font-family: SuisseWorks;
-    font-size: 3.2rem;
-}
-
-h3 {
-
-    font-size: 2.4rem;
-    font-weight: 700;
-}
-
-h4 {
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -.04rem;
-    font-size: 1.6rem;
-}
-
-p {
-    font-size: 1.6rem;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:hover,
-button[type="submit"]:hover {
-    color: var(--purple);
-}
-
-ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-li {
-    list-style: none;
-    display: inline-flex;
-    align-items: center;
-}
-
-section,
-section.container,
-footer {
-    margin-top: 6rem;
-}
-
-button,
-input {
-    background-color: transparent;
-    border: 0px;
-}
-
-button,
-.btn,
-a {
-    cursor: pointer;
-}
-
+@import url(styles/reset.css);
 /*********************************************************/
 /*************************classes*************************/
 /*********************************************************/
@@ -107,7 +12,7 @@ a {
     background-color: #eceb98;
     color: #3d3c0a;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: var(--medium-weight);
     padding: 0.6rem 0.4rem;
 }
 
@@ -118,8 +23,9 @@ a {
     justify-content: center;
     height: 4rem;
     min-width: 8rem;
-    font-size: 1.4rem;
-    font-weight: bolder;
+    font-size: var(--medium-font);
+    padding: 0 1.2rem;
+    font-weight: var(--bold-weight);
     background-color: transparent;
     border: 1px solid var(--dark-grey);
 }
@@ -136,7 +42,7 @@ a {
 
 .btn.sm {
     min-width: 4rem;
-    font-weight: 700;
+    font-weight: var(--medium-weight);
 }
 
 .btn.black {
@@ -146,9 +52,9 @@ a {
 
 /* icons */
 .material-symbols-outlined {
-    font-weight: bold;
+    font-weight: var(--bold-weight);
     line-height: inherit;
-    font-size: 24px;
+    font-size: 2.4rem;
 }
 
 /* hover cards */
@@ -166,15 +72,15 @@ a {
 
 .hover-card .card .card-content {
     text-align: center;
-    padding: 1rem 1rem;
+    padding: 1rem;
     margin-top: 0.7rem;
 
 
 }
 
 .hover-card .card p {
-    font-size: 1.5rem;
-    font-weight: bolder;
+    font-size: var(--large-font);
+    font-weight: var(--light-weight);
     padding-bottom: 1rem;
 }
 
@@ -186,7 +92,7 @@ a {
 .shadow,
 .card-content {
     background-color: white;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    box-shadow: var(--shadow);
 }
 
 /* hover nav */
@@ -224,8 +130,8 @@ a {
     margin: auto;
     display: flex;
     justify-content: space-around;
-    gap: 1.6rem;
-    padding: 10px 20px 2rem 20px;
+    gap: var(--medium-gap);
+    padding: 1rem 2rem;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -233,9 +139,8 @@ a {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 2.9rem 1.6rem;
+    gap: 2.9rem var(--medium-gap);
     width: 100%;
-    justify-items: center;
 }
 
 .grid-container>* {
@@ -263,7 +168,7 @@ a {
 }
 
 .main-nav .menu-content {
-    font-size: 1.4rem;
+    font-size: var(--medium-font);
     flex-grow: 1;
     align-items: center;
     display: inline-flex;
@@ -362,8 +267,8 @@ a {
     flex-direction: column;
     align-items: baseline;
     padding: 2rem 0;
-    gap: 1.6rem;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    gap: var(--medium-gap);
+    box-shadow: var(--shadow);
 
 }
 
@@ -399,7 +304,7 @@ a {
 /********************************************************/
 header .container {
     background-color: var(--light-grey);
-    padding-top: 5rem;
+    padding: 5rem 1rem;
     flex-wrap: wrap-reverse;
     flex-direction: row;
     align-items: flex-end;
@@ -420,7 +325,7 @@ header .container .card-content {
 
 header .container .card p {
     padding: 10px 0px;
-    font-size: 1.6rem;
+    font-size: var(--large-font);
 }
 
 /*****************************************************************/
@@ -434,15 +339,13 @@ header .container .card p {
 }
 
 .courses-section>p {
-    font-size: 1.9rem;
-    margin: 9px 0;
+    font-size: var(--xlarge-font);
 }
 
 /* courses nav bar */
 .courses-section>nav>ul {
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin: 3rem 0px;
+    font-size: var(--large-font);
+    font-weight: var(--bold-weight);
     overflow: hidden;
     flex-wrap: wrap;
     gap: 1rem 4.6rem;
@@ -453,28 +356,23 @@ header .container .card p {
     color: var(--grey);
 }
 
-.courses-section li a:hover {
+.courses-section .active, .courses-section li a:hover {
     color: black;
 }
 
 /* bordered container */
 .courses-section .container {
     border: 1px solid #d1d7dc;
-    padding: 3.2rem 3rem 0 3rem;
+    padding: 3.2rem 3rem;
     width: 100%;
 }
 
 .courses-section .container>p {
-    margin: 2rem 0;
     max-width: 80rem;
 }
 
 
 /* courses */
-.courses-section .grid-container {
-    padding: 5rem 0 1rem 0;
-}
-
 .course {
     display: flex;
     flex-direction: column;
@@ -486,8 +384,8 @@ header .container .card p {
 .rating,
 .course-name,
 .price {
-    font-weight: bolder;
-    font-size: 1.6rem;
+    font-weight: var(--bold-weight);
+    font-size: var(--large-font);
 }
 
 .rating-description {
@@ -502,7 +400,7 @@ header .container .card p {
 
 .stars span {
     color: #e59819;
-    font-size: 1.4rem;
+    font-size: var(--medium-font);
 }
 
 /**********************************************************/
@@ -515,8 +413,8 @@ header .container .card p {
 
 .feauters ul {
     width: 100%;
-    justify-content: space-around;
-    gap: 3rem 1.5rem;
+    justify-content: space-between;
+    gap: 3rem var(--medium-gap);
     flex-wrap: wrap;
 }
 
@@ -535,7 +433,7 @@ header .container .card p {
 }
 
 .circle~strong {
-    font-size: 1.6rem;
+    font-size: var(--large-font);
     margin-left: 1rem;
 }
 
@@ -547,8 +445,8 @@ header .container .card p {
 
 .categories ul {
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 1.6rem;
+    justify-content: space-between;
+    gap: var(--medium-gap);
 }
 
 .categories ul li {
@@ -558,7 +456,7 @@ header .container .card p {
 
 .categories ul li img {
     width: 20vw;
-    min-width: 150px;
+    min-width: 130px;
     max-width: 300px;
 }
 
@@ -582,12 +480,15 @@ header .container .card p {
 
 .feauters-topics {
     background: var(--light-blue);
+    padding: 5rem 1rem;
 }
 
 
+
 .main-list {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     justify-items: start;
+    align-items: baseline;
 }
 
 .main-list li {
@@ -602,8 +503,8 @@ header .container .card p {
 
 .feauters-topics ul li a {
     text-decoration: underline;
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: var(--large-font);
+    font-weight: var(--medium-weight);
     padding: 2.3rem 0 1rem 0;
 }
 
@@ -613,8 +514,23 @@ header .container .card p {
 }
 
 .feauters-topics ul li a~span {
-    font-size: 1.4rem;
+    font-size: var(--medium-font);
 }
+
+@media only screen and (max-width: 760px) {
+
+    /* For medium screen: */
+    .feauters-topics .main-list h4 {
+        font-size: var(--medium-font);
+    }
+    .feauters-topics ul li a {
+        font-size: var(--small-font);
+    }
+    .feauters-topics ul li a~span {
+        font-size: 1rem;
+    }
+}
+
 
 /************************************************************/
 /*************************Instructor*************************/
@@ -631,7 +547,7 @@ header .container .card p {
 .instructor img {
     width: 25vw;
     min-width: 250px;
-    max-width: 282px;
+    max-width: 400px;
 }
 
 .instructor .details {
@@ -639,8 +555,8 @@ header .container .card p {
 }
 
 .instructor .details p {
-    font-size: 1.9rem;
-    margin-bottom: 1.6rem;
+    font-size: var(--xlarge-font);
+    margin-bottom: var(--medium-gap);
 }
 
 /* business */
@@ -664,6 +580,11 @@ header .container .card p {
 /***********************************************************/
 .companies {
     background-color: var(--light-blue);
+    padding: 2rem 0;
+}
+
+.companies h2 {
+    font-size: 2.4rem;
 }
 
 .companies .container {
@@ -711,14 +632,14 @@ footer .links-language ul {
 
 .language-container .btn span {
     color: white;
-    font-weight: 100;
-    font-size: 1.6rem;
+    font-weight: var(--light-weight);
+    font-size: var(--large-font);
     margin-right: 1rem;
 }
 
 /* links */
 footer .links-language ul li a {
-    font-size: 1.4rem;
+    font-size: var(--medium-font);
     padding: 0.4rem 0;
     color: white;
 }
