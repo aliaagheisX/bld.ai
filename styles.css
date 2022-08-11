@@ -115,11 +115,11 @@ a {
 .btn {
     display: inline-flex;
     align-items: center;
-    min-height: 35px;
-    height: 55%;
+    justify-content: center;
+    height: 4rem;
+    min-width: 8rem;
     font-size: 1.4rem;
     font-weight: bolder;
-    padding: 0rem 1.3rem;
     background-color: transparent;
     border: 1px solid var(--dark-grey);
 }
@@ -135,7 +135,8 @@ a {
 }
 
 .btn.sm {
-    padding: 0rem 0.5rem;
+    min-width: 4rem;
+    font-weight: 700;
 }
 
 .btn.black {
@@ -321,11 +322,11 @@ a {
     display: none;
 }
 
-/* TODO : make  responsive navigation bar*/
+/* responsive navigation bar*/
 @media only screen and (max-width: 1200px) {
 
     /* For medium screen: */
-    .main-nav .menu-content ul {
+    .main-nav .menu-content .link-lists {
         display: none;
     }
 }
@@ -383,7 +384,6 @@ a {
     width: 100%;
 }
 
-.hamburger-checkbox:checked~.menu-content form button,
 .hamburger-checkbox:checked~.menu-content .hover-card .card {
     display: none;
 }
@@ -394,11 +394,6 @@ a {
     padding: 0;
 }
 
-/* .hamburger-checkbox:checked ~ .menu-content ul {
-    display: flex;
-    padding: 0;
-    flex-wrap: nowrap;
-} */
 /********************************************************/
 /*************************Header*************************/
 /********************************************************/
