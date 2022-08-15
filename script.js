@@ -138,7 +138,7 @@ async function getCourses() {
 
     } catch (error) {
         /* if there no json server load from file  */
-        let response = await fetch('../data/courses.json');
+        let response = await fetch('data/courses.json');
         let data = await response.json()
         inializer(data.data);
 
