@@ -3,6 +3,12 @@
 /*************************classes*************************/
 /*********************************************************/
 
+
+.empty_star {
+    font-variation-settings:
+    'FILL' 0
+}
+
 /* special texts(spans) */
 .utiltiy-comment {
     color: var(--grey);
