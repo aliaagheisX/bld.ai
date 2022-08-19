@@ -1,7 +1,13 @@
-@import url(styles/reset.css);
+@import url(reset.css);
 /*********************************************************/
 /*************************classes*************************/
 /*********************************************************/
+
+
+.empty_star {
+    font-variation-settings:
+    'FILL' 0
+}
 
 /* special texts(spans) */
 .utiltiy-comment {
@@ -139,7 +145,7 @@
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 2.9rem var(--medium-gap);
+    gap: 3.2rem var(--medium-gap);
     width: 100%;
 }
 
@@ -164,6 +170,10 @@
     padding: 0 2.4rem;
     gap: 1rem;
     height: 6.7rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
 
 }
 
@@ -338,6 +348,10 @@ header .container .card p {
     padding-top: 3rem;
 }
 
+.course-content {
+    display: none;
+}
+
 .courses-section>p {
     font-size: var(--xlarge-font);
 }
@@ -352,12 +366,16 @@ header .container .card p {
     max-height: 2rem;
 }
 
-.courses-section li a {
+.courses-section li label {
     color: var(--grey);
+    cursor:  pointer;
 }
 
-.courses-section .active, .courses-section li a:hover {
+.radio-custom ~ label:hover {
     color: black;
+}
+.radio-custom:checked ~ label{
+    color: red;
 }
 
 /* bordered container */

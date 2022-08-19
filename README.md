@@ -1,2 +1,7 @@
-# bld.ai
-bld.ai projects and assignments
+## Dependencies
+
+to use json-server 
+
+```bash
+  npm start
+```

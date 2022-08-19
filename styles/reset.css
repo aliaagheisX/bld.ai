@@ -40,6 +40,9 @@
 html {
     font-size: 62.5%;
 }
+body {
+    padding-top: 6.7rem;
+}
 
 * {
     margin: 0;
@@ -64,7 +67,7 @@ h3 {
 h4 {
     font-weight: var(--medium-weight);
     line-height: 1.2;
-    letter-spacing: -.04rem;
+    letter-spacing: -.1rem;
     font-size: var(--large-font);
 }
 
@@ -110,4 +113,13 @@ button,
 .btn,
 a {
     cursor: pointer;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48
 }
