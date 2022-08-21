@@ -1,16 +1,14 @@
 @import url(reset.css);
+@import url(utilites.css);
 @import url(nav.css);
 
-/********************************************************/
 /*************************Header*************************/
-/********************************************************/
 header .myContainer {
     background-color: var(--light-grey);
     padding: 5rem 1rem;
     flex-wrap: wrap-reverse;
     flex-direction: row;
     align-items: flex-end;
-
 }
 
 header .myContainer img {
@@ -20,19 +18,14 @@ header .myContainer img {
 }
 
 header .myContainer .card-content {
-    padding: 40px 15px;
+    padding: 2rem 15px;
     width: 100vw;
     max-width: 44rem;
+    text-align: start;
 }
 
-header .myContainer .card p {
-    padding: 10px 0px;
-    font-size: var(--large-font);
-}
 
-/*****************************************************************/
 /*************************Courses Section*************************/
-/*****************************************************************/
 
 .courses-section {
     flex-direction: column;
@@ -70,43 +63,6 @@ header .myContainer .card p {
 }
 
 
-.carousel {
-    width: 100%;
-}
-
-.carousel-control-next,
-.carousel-control-prev {
-    opacity: 1;
-    align-items: flex-start;
-    top: 23%;
-
-}
-
-.carousel-control-next {
-    justify-content: end;
-    right: 0rem;
-}
-
-.carousel-control-prev {
-    justify-content: start;
-    left: -1.4rem;
-}
-
-.carousel button .circle span {
-    background-color: var(--dark-grey);
-    color: white;
-}
-
-
-.carousel-inner {
-    flex-wrap: nowrap;
-}
-
-.carousel-item {
-    margin-right: 0;
-    display: block;
-}
-
 
 /* bordered container */
 .courses-section .myContainer {
@@ -132,15 +88,6 @@ header .myContainer .card p {
     gap: 0.7rem;
 }
 
-#courses-container {
-    padding: 0;
-}
-
-#courses-container .row {
-    flex-wrap: nowrap;
-    overflow: hidden;
-}
-
 .rating,
 .course-name,
 .price {
@@ -158,14 +105,9 @@ header .myContainer .card p {
     color: #b4690e;
 }
 
-.stars span {
-    color: #e59819;
-    font-size: var(--medium-font);
-}
 
-/**********************************************************/
 /*************************Feauters*************************/
-/**********************************************************/
+
 .feauters {
     background-color: var(--light-blue);
     padding: 1rem 0;
@@ -182,50 +124,13 @@ header .myContainer .card p {
     max-width: 33rem;
 }
 
-.circle span {
-    background-color: #d1d7dc;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.circle~strong {
-    font-size: var(--large-font);
-    margin-left: 1rem;
-}
-
-
-/************************************************************/
-/*************************categories*************************/
-/************************************************************/
-
-.img-wrapper {
-    overflow: hidden;
-}
-
-.img-wrapper img {
-    transition: transform 100ms cubic-bezier(.2, 0, 1, .9);
-    width: 100%;
-
-}
-
-.img-wrapper img:hover {
-    transform: scale(1.1);
-}
-
-/*****************************************************************/
 /*************************feauters-topics*************************/
-/*****************************************************************/
 
 .feauters-topics {
     background: var(--light-blue);
     padding: 5rem 1rem;
 }
-
-
 
 .main-list {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -261,26 +166,8 @@ header .myContainer .card p {
     font-size: var(--medium-font);
 }
 
-@media only screen and (max-width: 760px) {
-
-    /* For medium screen: */
-    .feauters-topics .main-list h4 {
-        font-size: var(--medium-font);
-    }
-
-    .feauters-topics ul li a {
-        font-size: var(--small-font);
-    }
-
-    .feauters-topics ul li a~span {
-        font-size: 1rem;
-    }
-}
-
-
-/************************************************************/
 /*************************Instructor*************************/
-/************************************************************/
+
 .instructor {
     flex-direction: row;
     justify-content: center;
@@ -308,22 +195,9 @@ header .myContainer .card p {
 /* business */
 
 
-@media only screen and (min-width: 1000px) {
 
-    /* For medium screen: */
-    .instructor {
-        flex-direction: row;
-        text-align: left;
-    }
-
-    .business {
-        flex-direction: row-reverse;
-    }
-}
-
-/***********************************************************/
 /*************************companies*************************/
-/***********************************************************/
+
 .companies {
     background-color: var(--light-blue);
     padding: 2rem 0;
@@ -338,9 +212,9 @@ header .myContainer .card p {
     text-align: center;
 }
 
-/********************************************************/
+
 /*************************Footer*************************/
-/********************************************************/
+
 
 /* layout */
 footer {
@@ -398,4 +272,40 @@ footer .links-language ul li a:hover {
 .copyright span {
     color: white;
     font-size: 1.2rem;
+}
+
+
+/* responsive designs */
+
+/*************************feauters-topics*************************/
+
+@media only screen and (max-width: 760px) {
+
+    /* For medium screen: */
+    .feauters-topics .main-list h4 {
+        font-size: var(--medium-font);
+    }
+
+    .feauters-topics ul li a {
+        font-size: var(--small-font);
+    }
+
+    .feauters-topics ul li a~span {
+        font-size: 1rem;
+    }
+}
+
+/*************************Instructor*************************/
+
+@media only screen and (min-width: 1000px) {
+
+    /* For medium screen: */
+    .instructor {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .business {
+        flex-direction: row-reverse;
+    }
 }

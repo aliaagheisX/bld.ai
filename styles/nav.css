@@ -99,15 +99,7 @@
     width: 100%;
 }
 
-.hamburger-checkbox:checked~.menu-content>* {
-    height: auto;
-    margin: auto;
-    display: initial;
-    text-align: center;
-    width: 100%;
-}
-
-.hamburger-checkbox:checked~.menu-content .hover-card .card {
+.hamburger-checkbox:checked~.menu-content .hover-card .card-hover-container {
     display: none;
 }
 
