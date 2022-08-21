@@ -32,7 +32,7 @@ class Course {
         courseNode.appendChild(this.#getInstructorsNode());
         courseNode.appendChild(this.#getRatingNode());
         courseNode.appendChild(this.#getPriceNode());
-
+        courseNode.appendChild(this.#getBestSeller());
         return courseNode;
     }
 
@@ -102,7 +102,13 @@ class Course {
     #getPriceNode() {
         return createElementE('span', { 'class': 'price' }, `E£${this.price}`);
     }
-
+    
+    #getBestSeller() {
+        if(this.isBestSeller) {
+            return createElementE('span', {'class':'badge'},  'Bestseller');
+        }
+        return createElementE('div');
+    }
 }
 
 class Category {
@@ -248,15 +254,16 @@ const search = (e) => {
 
 
 
-/* const updateButtons = (carousel, row) => {
-    let displayPrev = row.scrollLeft  == 0 ? 'none' : 'flex';
-    let displayNext = row.scrollLeft  >= row.scrollWidth - row.clientWidth ? 'none' : 'flex';
-    console.log(displayPrev, displayNext);
+/* for carsoul animation */
+const updateButtons = (carousel, row, left) => {
+    let displayPrev = left <= 0 ? 'none' : 'flex';
+    let displayNext = left >= row.scrollWidth - row.clientWidth ? 'none' : 'flex';
+
     carousel.children[1].style.display = displayPrev;
     carousel.children[2].style.display = displayNext;
-} */
+}
 
-async function scrollAnimation(element) {
+function scrollAnimation(element) {
     /* data attributes */
     const target = element.getAttribute('data-bs-target');
     const behavior = element.getAttribute('data-bs-slide');
@@ -273,7 +280,9 @@ async function scrollAnimation(element) {
     row.scroll({
         left: (left),
         behavior: 'smooth'
-    })
+    });
+
+    updateButtons(carousel, row, left);
 
 }
 
@@ -306,6 +315,11 @@ const inializer = (data) => {
     document.querySelectorAll('.carousel button').forEach((element) => {
         element.addEventListener('click', () => scrollAnimation(element));
     });
+
+    /* remove all previos buttons */
+    document.querySelectorAll('.carousel-control-prev').forEach((e) => {
+        e.style.display = 'none';
+    })
 }
 
 /* api to get all course */
@@ -324,4 +338,5 @@ async function getCourses() {
 
     }
 }
+
 getCourses();
