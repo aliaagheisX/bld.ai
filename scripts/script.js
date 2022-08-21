@@ -45,7 +45,7 @@ const addCourse = (courseData) => {
         courseBestSeller = Math.random() >= 0.6;
 
 
-    const courseNode = createElementE("div", { "class": "course search-courses" });
+    const courseNode = createElementE("div", { "class": "carousel-item  course search-courses" });
 
     const courseImageNode = createElementE("img", {
         "src": courseData.image,
@@ -82,62 +82,104 @@ const addCourse = (courseData) => {
     return courseNode;
 };
 
-const addCategory = (category) => {
-    /* get title of category */
-    const title = category.title.slice(15);
+const addCategoryTab = (title, titleID) => {
+    const categoryLinkNode = createElementE('button', {
+        'class': 'nav-link',
+        'id' : `nav-${titleID}-tab`,
+        'data-bs-toggle': "tab",
+        'data-bs-target': `#nav-${titleID}`,
+        'aria-controls':`nav-${titleID}`,
+        'type':"button",
+        'role':"tab",
+        'aria-selected':'false'
+    }, title);
+    
+    
+    document.querySelector('#category-nav .nav').appendChild(categoryLinkNode);
+}
 
-    /* add in nav bar */
-    const categoryLinkContainer = createElementE('li');
-    const categoryLinkNode = createElementE('input', {
-        'name': 'cat',
-        'class': 'radio-custom',
-        'id': title,
-        'value': title,
-        'type': 'radio',
-        'hidden': ''
-    });
-    const categoryLabelNode = createElementE('label', { 'for': title }, title);
-
-    categoryLinkContainer.appendChild(categoryLinkNode);
-    categoryLinkContainer.appendChild(categoryLabelNode);
-
-    document.getElementById('category-nav').appendChild(categoryLinkContainer);
-
-    /* add category page  */
-    const categoryPageNode = createElementE('div', {
-        'id': `courses-${title}`,
-        'class': 'container course-content'
+const btnIcon = (functionality, titleID) => {
+    const btn = createElementE('button', {
+        "class":`carousel-control-${functionality}`, 
+        "type":"button", 
+        "data-bs-target":`#courses-${titleID}`,
+        'data-bs-slide': functionality
     });
 
+    const circle = createElementE('span', {'class':'circle'});
+    const icn = createElementE(
+        'span', 
+        {'class':'material-symbols-outlined'},
+        functionality == 'prev' ? 'navigate_before' : 'navigate_next'
+    );
 
-    // 1- add  category details 
-    categoryPageNode.appendChild(createElementE('h3', {}, category.header));
-    categoryPageNode.appendChild(createElementE('p', {}, category.description));
-    categoryPageNode.appendChild(createElementE('a', {
+    const accessibility = createElementE('span', {'class':'visually-hidden'}, functionality);
+
+    circle.appendChild(icn);
+    btn.appendChild(circle);
+    btn.appendChild(accessibility);
+    return btn;
+}
+
+
+const inializeCategory = (title, titleID, category) => {
+    const tab = createElementE('div', {
+        'class': "tab-pane show",
+        'id': `nav-${titleID}`,
+        'role': "tabpanel",
+        'aria-labelledby': `nav-${titleID}-tab`,
+        'tabindex': 0
+    });
+    
+    const container = createElementE('div', {
+        'class': "myContainer course-content",
+        'id':  `courses-${titleID}`
+    });
+    
+    const carousel = createElementE('div', {
+        'class': 'carousel',
+        'data-bs-ride': "carousel"
+    });
+    
+    const row = createElementE('div', {
+        'class': "carousel-inner row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5"
+    });
+    carousel.appendChild(row);
+    carousel.appendChild(btnIcon('prev', titleID));
+    carousel.appendChild(btnIcon('next', titleID));
+
+    container.appendChild(createElementE('h3', {}, category.header));
+    container.appendChild(createElementE('p', {}, category.description));
+    container.appendChild(createElementE('a', {
         'class': 'btn',
         'href': '/'
     }, `Explore ${title}`));
+    container.appendChild(carousel);
+
+
+    tab.appendChild(container);
+    
+    document.querySelector('.category-tab').appendChild(tab);
+
+    return row;
+}
+
+const addCategory = (category) => {
+
+    /* get title of category */
+    const title = category.title.slice(15);
+    const titleID = title.replace(' ', '-');
+
+    addCategoryTab(title, titleID);
+    /* add category page  */
 
     // 2- add courses container
-    const coursesContainerNode = createElementE('div', {
-        'id': "courses-container",
-        'class': "grid-container"
-    });
-    // 2.1- add all courses
-    category.courses.forEach((course) => coursesContainerNode.appendChild(addCourse(course)));
+    const coursesRow = inializeCategory(title,titleID,category);
+    
+    category.courses.forEach((course) => {coursesRow.appendChild(addCourse(course)); });
 
-    categoryPageNode.appendChild(coursesContainerNode);
-
-
-    document.getElementById('category-container').appendChild(categoryPageNode);
 }
 
-/* for tap navbar */
-const toggleCourses = (radio) => {
-    /* radio already one selected */
-    document.querySelectorAll('.course-content').forEach((course) => course.style.display = 'none');
-    document.getElementById(`courses-${radio.id}`).style.display = 'flex';
-}
 
 /* for searching */
 const search = (e) => {
@@ -162,6 +204,39 @@ const search = (e) => {
 
 }
 
+
+
+/* const updateButtons = (carousel, row) => {
+    let displayPrev = row.scrollLeft  == 0 ? 'none' : 'flex';
+    let displayNext = row.scrollLeft  >= row.scrollWidth - row.clientWidth ? 'none' : 'flex';
+    console.log(displayPrev, displayNext);
+    carousel.children[1].style.display = displayPrev;
+    carousel.children[2].style.display = displayNext;
+} */
+
+async function scrollAnimation (element) {
+    /* data attributes */
+    const target = element.getAttribute('data-bs-target');
+    const behavior = element.getAttribute('data-bs-slide');
+    
+    /* element getters */
+    const carousel = document.querySelector(`${target} .carousel`);
+    const row = carousel.children[0];
+    
+    /* scroll calculation */
+    const step = Math.max(row.offsetWidth - row.children[0].offsetWidth,row.children[0].offsetWidth);
+    let left = row.scrollLeft;
+    left += behavior == 'next' ? +step : -step;
+    
+    row.scroll({
+        left: (left),
+        behavior: 'smooth'
+    }) 
+    
+}
+
+
+
 /* call first after fetch data from api */
 const inializer = (data) => {
 
@@ -169,21 +244,20 @@ const inializer = (data) => {
     for (category in data) {
         addCategory(data[category]);
     }
-
+ 
     //inial all cousres display none
-    //make default category appear only
-    document.querySelector(".radio-custom").checked = true;
-    document.querySelector(".course-content").style.display = "flex";
-
-    //add event click of checkboxes of nav bar
-    //to toggle courses
-    document.querySelectorAll('.radio-custom').forEach((e) => {
-        e.addEventListener("click", () => toggleCourses(e));
-    });
-
+    document.querySelector('#category-nav .nav-link').classList.add('active');
+    document.querySelector('#category-nav .nav-link').setAttribute('aria-selected', 'true');
+    document.querySelector('.tab-pane').classList.add('active');
     //add events for searching
     document.getElementById("search").addEventListener("submit", search);
     document.getElementById("search-bar").addEventListener("keyup", search);
+
+
+
+   document.querySelectorAll('.carousel button').forEach((element)=> {
+        element.addEventListener('click', () => scrollAnimation(element));
+   });
 }
 
 /* api to get all course */
