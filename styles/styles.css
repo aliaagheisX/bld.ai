@@ -1,5 +1,6 @@
 @import url(reset.css);
 @import url(nav.css);
+
 /********************************************************/
 /*************************Header*************************/
 /********************************************************/
@@ -38,6 +39,7 @@ header .myContainer .card p {
     align-items: flex-start;
     padding-top: 3rem;
 }
+
 .courses-section>p {
     font-size: var(--xlarge-font);
 }
@@ -51,13 +53,13 @@ header .myContainer .card p {
     gap: 3rem 4.6rem;
     border: 0;
     max-height: 3rem;
-    
-    
+
+
 }
 
 #category-nav button {
     color: var(--grey);
-    cursor:  pointer;
+    cursor: pointer;
     border: 0;
     padding: 0;
 }
@@ -72,17 +74,19 @@ header .myContainer .card p {
     width: 100%;
 }
 
-.carousel-control-next ,
+.carousel-control-next,
 .carousel-control-prev {
     opacity: 1;
     align-items: flex-start;
     top: 23%;
 
 }
+
 .carousel-control-next {
     justify-content: end;
     right: 0rem;
 }
+
 .carousel-control-prev {
     justify-content: start;
     left: -1.4rem;
@@ -97,6 +101,7 @@ header .myContainer .card p {
 .carousel-inner {
     flex-wrap: nowrap;
 }
+
 .carousel-item {
     margin-right: 0;
     display: block;
@@ -113,6 +118,7 @@ header .myContainer .card p {
 .courses-section .myContainer>p {
     max-width: 80rem;
 }
+
 .course img {
     width: 100%;
 }
@@ -129,9 +135,10 @@ header .myContainer .card p {
 #courses-container {
     padding: 0;
 }
-#courses-container .row{
+
+#courses-container .row {
     flex-wrap: nowrap;
-    overflow: hidden;   
+    overflow: hidden;
 }
 
 .rating,
@@ -260,9 +267,11 @@ header .myContainer .card p {
     .feauters-topics .main-list h4 {
         font-size: var(--medium-font);
     }
+
     .feauters-topics ul li a {
         font-size: var(--small-font);
     }
+
     .feauters-topics ul li a~span {
         font-size: 1rem;
     }
