@@ -2,9 +2,13 @@ import { updateAllButtons, updateButtons } from './utils.js';
 
 /** responsible to bind element with their events at start of page */
 export const startEvent = () => {
+
     //add events for searching
-    document.getElementById("search").addEventListener("submit", search);
-    document.getElementById("search-bar").addEventListener("keyup", search);
+
+    /* to prevent submit action  */
+    document.getElementById("search").addEventListener("submit", (e) => { e.preventDefault() });
+
+    document.getElementById("search-bar").addEventListener("keyup", debounce());
 
 
     //add event for scroll
@@ -14,13 +18,26 @@ export const startEvent = () => {
 }
 
 
+/**
+ * used in search
+ * to delay for user input 
+ * @returns 
+ */
+function debounce() {
+    const timeOut = 250;
+    let timer;
+    return () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => { search(); }, timeOut);
+    };
+}
+
 /** 
  * called when the user use search bar
  * @param {event} e - to prevent input submit default
  */
-const search = (e) => {
-    /* to prevent submit action  */
-    e.preventDefault();
+
+const search = () => {
 
     /* get the searched value */
     const courseName = document.getElementById("search-bar").value;
