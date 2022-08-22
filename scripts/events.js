@@ -17,18 +17,16 @@ export const startEvent = () => {
     });
 }
 
-
 /**
  * used in search
  * to delay for user input 
  * @returns 
  */
 function debounce() {
-    const timeOut = 250;
     let timer;
     return () => {
         clearTimeout(timer);
-        timer = setTimeout(() => { search(); }, timeOut);
+        timer = setTimeout(() => { search(); }, 250);
     };
 }
 
