@@ -1,0 +1,141 @@
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 2.4rem;
+    gap: 1rem;
+    height: 6.7rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+
+}
+
+.main-nav .menu-content {
+    font-size: var(--medium-font);
+    flex-grow: 1;
+    align-items: center;
+    display: inline-flex;
+
+}
+
+.main-nav .menu-content>* {
+    height: 6.7rem;
+    align-items: center;
+    display: inline-flex;
+}
+
+.main-nav form {
+    flex-grow: 100;
+}
+
+.main-nav form {
+    display: flex;
+}
+
+.main-nav form .search-bar {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50px;
+    flex-grow: 1;
+    display: flex;
+    padding: 0px 10px;
+    margin: 7px;
+    background-color: var(--light-grey);
+}
+
+.main-nav form .search-bar input {
+    width: 100%;
+    height: 100%;
+    padding: 12px 3px;
+    outline: 0px;
+}
+
+
+.main-nav ul {
+    padding-left: 20px;
+    justify-content: space-around;
+    gap: 0.7rem;
+}
+
+.main-nav .link-lists {
+    gap: 1.8rem;
+    margin: 0;
+}
+
+.main-nav ul li {
+    height: 100%;
+}
+
+.hamburger,
+.hamburger-checkbox {
+    display: none;
+}
+
+
+
+.hamburger-checkbox:checked~.menu-content {
+    width: 100%;
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 2rem 0;
+    gap: var(--medium-gap);
+    box-shadow: var(--shadow);
+
+}
+
+
+.hamburger-checkbox:checked~.menu-content>* {
+    height: auto;
+    margin: auto;
+    display: initial;
+    text-align: center;
+    width: 100%;
+}
+
+.hamburger-checkbox:checked~.menu-content .hover-card .card-hover-container {
+    display: none;
+}
+
+.hamburger-checkbox:checked~.menu-content ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+
+/* responsive navigation bar*/
+@media only screen and (max-width: 1200px) {
+
+    /* For medium screen: */
+    .main-nav .menu-content .link-lists {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    .main-nav {
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+
+    .main-nav>* {
+        flex-grow: 0;
+    }
+
+    .main-nav .menu-content {
+        display: none;
+    }
+
+    .hamburger {
+        display: inherit;
+    }
+}
